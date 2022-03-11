@@ -11,7 +11,7 @@ const HeroSection = () => {
                     <span className="hero__name">Thien Nguyen</span>
                 </h1>
                 <div className="hero__img">
-                    <img src={HeroImg} alt="" />
+                    <img src={HeroImg} alt="Img" />
                 </div>
                 <div className="hero__info">
                     <p>
