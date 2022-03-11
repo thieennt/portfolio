@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ProjectImg from '../assets/img/11.jpg';
+import Button from './Button'
 
 const ProjectItemStyles = styled.div`
   .projectItem__img {
-    width: 100%;
+    width: 99%;
     height: 400px;
     border-radius: 12px;
     overflow: hidden;
@@ -23,14 +24,10 @@ const ProjectItemStyles = styled.div`
     padding: 1rem;
     border-radius: 12px;
 
-    a {
-        text-decoration: none;
-        color: #BCB4B4;
-    }
   }
   .projectItem__title {
     font-size: 1.4rem;
-    
+    text-align: center;
   }
   .projectItem__desc {
     text-align: justify;
@@ -38,10 +35,46 @@ const ProjectItemStyles = styled.div`
     margin-top: 1rem;
     line-height: 1.7;
   }
+
+    .projectItem__link {
+        width: 50%;
+        margin: 2rem auto;
+        padding: 0.7rem;
+        border-radius: 8px;
+        background-color: #BCB4B4;
+        text-align: center;
+
+        a {
+          text-decoration: none;
+          color: black;
+        }
+    }
+    .projectItem__link:hover {
+      cursor: pointer;
+      background-color: #262626;
+      border: 2px solid #BCB4B4;
+      transition: 0.3s ease transform;
+      a {
+        text-decoration: none;
+        color: #BCB4B4;
+      }
+    }
+ 
   @media only screen and (max-width: 768px) {
     .projectItem__img {
       height: 350px;
     }
+
+    .projectItem__desc {
+      font-size: 0.9rem;
+    }
+
+    .projectItem__link {
+      width: 80%;
+      margin: 2rem auto;
+      a {
+        font-size: 0.9rem;
+      }
   }
 `;
 
@@ -49,18 +82,19 @@ export default function ProjectItem({
   img = ProjectImg,
   title = 'Project Name',
   desc = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-  path = ''
+  link = ''
 }) {
   return (
     <ProjectItemStyles>
-      <a href={path} className="projectItem__img">
+      <a href={link} target="_blank" className="projectItem__img">
         <img src={img} alt="project img" />
       </a>
       <div className="projectItem__info">
-        <a href={path}>
-          <h3 className="projectItem__title">{title}</h3>
-        </a>
+        <h3 className="projectItem__title">{title}</h3>
         <p className="projectItem__desc">{desc}</p>
+        <div className="projectItem__link">
+          <a href={link} target="_blank">Open Project</a>
+        </div>
       </div>
     </ProjectItemStyles>
   );

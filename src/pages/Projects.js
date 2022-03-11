@@ -91,7 +91,7 @@ const Projects = () => {
                                 title={item.name}
                                 desc={item.desc}
                                 img={item.img}
-                                path={item.path}
+                                link={item.link}
                             />
                         ))}
                     </div>

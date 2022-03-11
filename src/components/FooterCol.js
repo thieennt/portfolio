@@ -28,6 +28,10 @@ const ColStyle = styled.div`
     .heading, ul {
         text-align: center;
       }
+
+      a {
+        font-size: 0.9rem;
+      }
   }
 `;
 
