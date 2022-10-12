@@ -1,23 +1,19 @@
+import "./App.css";
+import Home from "./pages/Home.js";
+import About from "./pages/About.js";
+import Projects from "./pages/Projects.js";
+import Contact from "./pages/Contact.js";
+import Footer from "./components/Footer/index.js";
 
-import './App.css';
-import Nav from './components/Nav.js';
-import Home from './pages/Home.js';
-import About from './pages/About.js';
-import Projects from './pages/Projects.js';
-import Contact from './pages/Contact.js';
-import Footer from './components/Footer.js';
+import Header from "./components/Header";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Nav />
+        <Header />
         <Switch>
           <Route path="/" exact>
             <Home />
